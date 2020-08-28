@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_light"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Welcome"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <EditText
+        android:id="@+id/addressline1edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/address1"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/addressline2edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/address2"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/addresstypeedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/addtype"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/cityedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Citye"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/distedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Dist"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/geoedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Geolo"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/background_light" />
+
+    <EditText
+        android:id="@+id/pincodeedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/pin"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/stateedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/state"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/iscurrentaddedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="isCurrentAddress"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/AlterAddress"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <EditText
+        android:id="@+id/addresslineedittext1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/address1"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/addressline2editext1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/address2"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/addresstypeedittext1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/addtype"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/cityedittext1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Citye"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/districtedittext1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Dist"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/geolocedittext1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Geolo"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/pincodeedittext1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/pin"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/stateedittext1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/state"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/iscurrentadd1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="IsCurrentAddress"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextdateofbirth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Editdob"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edittextemailid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Emailid"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/firstnameedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Firstname"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edittextgender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Gender"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/govidedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Govtid"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/govtidtypededittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Govtidtype"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/kycverifyedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/kycveri"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/lastnamedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/lastname"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/mobilenoedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Mobileno"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/passwordedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/pass"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/requesttimeedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Requesttime"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/requestuseridedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/Ruid"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/usernameedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/usre"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnsignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/butsub" />
+
+</LinearLayout>

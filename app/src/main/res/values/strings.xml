@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">MyAdminrassoiya</string>
+    <string name="Welcome">Rasoiyya Admin Registration</string>
+    <string name="address1">Address Line1</string>
+    <string name="address2">Address Line2</string>
+    <string name="addtype">AddressType</string>
+    <string name="Citye">City</string>
+    <string name="Dist">District</string>
+    <string name="Geolo">Geo Location</string>
+    <string name="pin">PinCode</string>
+    <string name="state">State</string>
+    <string name="AlterAddress">Alternate Address Enter</string>
+    <string name="butsub">SignUp</string>
+    <string name="Editdob">Enter DOB</string>
+    <string name="Emailid">Enter Email Id</string>
+    <string name="Firstname">Enter Firstname</string>
+    <string name="Gender">Enter Gender</string>
+    <string name="Govtid">Enter Govt Id No</string>
+    <string name="Govtidtype">Enter Govt Id Type</string>
+    <string name="kycveri">Is kyc verified</string>
+    <string name="lastname">Last Name</string>
+    <string name="Mobileno">Mobileno</string>
+    <string name="pass">Enter Password</string>
+    <string name="Requesttime">RequestTime</string>
+    <string name="Ruid">RequestUid</string>
+    <string name="usre">UserName</string>
+
+
+</resources>
