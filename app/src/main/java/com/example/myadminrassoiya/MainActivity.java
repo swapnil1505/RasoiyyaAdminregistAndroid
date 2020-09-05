@@ -1,8 +1,11 @@
 package com.example.myadminrassoiya;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,13 +18,16 @@ import com.example.myadminrassoiya.remote.ApiUtils;
 import com.example.myadminrassoiya.remote.User;
 import com.example.myadminrassoiya.remote.UserService;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
+    Context context;
     EditText editaddressline1;
     EditText editaddressline11;
     EditText editaddressline2;
@@ -45,22 +51,20 @@ public class MainActivity extends AppCompatActivity {
     EditText firstnameedittext;
     EditText genderedittext;
     EditText govtidnoedittext;
-    EditText govtidtype= (EditText)findViewById(R.id.govtidtypededittext);
-    EditText kycedittext=(EditText)findViewById(R.id.kycverifyedittext);
-    EditText lastnameedittext=(EditText)findViewById(R.id.lastnamedittext);
-    EditText mobnoedittext = (EditText)findViewById(R.id.mobilenoedittext);
-    EditText passwordedittext=(EditText)findViewById(R.id.passwordedittext);
-    EditText requesttimeedittext=(EditText)findViewById(R.id.requesttimeedittext);
-    EditText requestidedittext =(EditText)findViewById(R.id.requestuseridedittext);
-    EditText usernameedittext=(EditText)findViewById(R.id.usernameedittext);
-
+    EditText govtidtype;
+    EditText kycedittext;
+    EditText lastnameedittext;
+    EditText mobnoedittext;
+    EditText passwordedittext;
+    EditText usernameedittext;
     Button signup;
     UserService userService;
-    List<Address1> list = null;
+    List<Address1> list = new ArrayList<Address1>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        context = this;
         setContentView(R.layout.activity_main);
         editaddressline1 = (EditText)findViewById(R.id.addressline1edittext);
         editaddressline11 = (EditText) findViewById(R.id.addresslineedittext1);
@@ -85,10 +89,17 @@ public class MainActivity extends AppCompatActivity {
         firstnameedittext = (EditText)findViewById(R.id.firstnameedittext);
         genderedittext = (EditText)findViewById(R.id.edittextgender);
         govtidnoedittext = (EditText)findViewById(R.id.govidedittext);
+         govtidtype= (EditText)findViewById(R.id.govtidtypededittext);
+         kycedittext=(EditText)findViewById(R.id.kycverifyedittext);
+         lastnameedittext=(EditText)findViewById(R.id.lastnamedittext);
+         mobnoedittext = (EditText)findViewById(R.id.mobilenoedittext);
+         passwordedittext=(EditText)findViewById(R.id.passwordedittext);
+         usernameedittext=(EditText)findViewById(R.id.usernameedittext);
 
         signup = (Button)findViewById(R.id.btnsignup);
         userService = ApiUtils.getUserService();
         signup.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
                 dowork();
@@ -104,8 +115,8 @@ public class MainActivity extends AppCompatActivity {
                 use.setLast_name(lastnameedittext.getText().toString());
                 use.setMobile_number( mobnoedittext.getText().toString());
                 use.setPassword(passwordedittext.getText().toString());
-                use.setRequest_time(requesttimeedittext.getText().toString());
-                use.setRequestuid(requestidedittext.getText().toString());
+                use.setRequest_time(requesttime());
+                use.setRequestuid(requestid());
                 use.setUser_name(usernameedittext.getText().toString());
                 doSignup(use);
 
@@ -123,13 +134,26 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private String requestid() {
+        Random rand =new Random();
+        String m =String.valueOf(rand.nextInt(1000));
+        return m;
+    }
+
+
+    private String requesttime() {
+        String m = String.valueOf(java.time.LocalTime.now());
+        return m;
+
+    }
+
     private void doSignup(User use) {
-        Call call = userService.adminRegistration( use);
-        call.enqueue(new Callback() {
+        Call<ResObj> call = userService.adminRegistration( use);
+        call.enqueue(new Callback<ResObj>() {
             @Override
-            public void onResponse(Call call, Response response) {
+            public void onResponse(Call<ResObj> call, Response<ResObj> response) {
                 if(response.isSuccessful()){
-                    ResObj resObj = (ResObj) response.body();
+                    ResObj resObj = response.body();
                     if(resObj.getStatus().equals("SUCCESS")){
                         //login start main activity
                         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
@@ -145,11 +169,13 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call call, Throwable t) {
+            public void onFailure(Call<ResObj> call, Throwable t) {
                 Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show() ;
-
             }
+
+
         });
+
     }
 
     private void dowork() {
